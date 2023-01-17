@@ -11,6 +11,7 @@ class Survey {
     private Results results;
     private Dictionary<String, List<String>> questions;
     private Dictionary<String, List<String>> answers;
+    private int n;
 
     private Dictionary<String, List<String>> MockDict() {
         Dictionary<String, List<String>> mockQuestions = new Dictionary<String, List<String>>();
@@ -34,7 +35,19 @@ class Survey {
     }
 
 
-    
+    public void ExecuteSurvey() {
+        Console.WriteLine("Number of participants: ");
+        n = Int32.Parse(Console.ReadLine());
+
+        answers = new Dictionary<string, List<string>>();
+        foreach(var question in questions) {
+            answers.Add(question.Key, new List<String>());
+        }
+
+        for (int i = 0; i < n; i ++) {
+
+        }
+    }
 
 
     public void Run() {
