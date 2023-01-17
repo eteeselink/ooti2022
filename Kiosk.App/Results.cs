@@ -7,7 +7,6 @@ using System.Collections.Generic;
 
 
 namespace Kiosk.App;
-
 class Results {
 
     public void Run() {
