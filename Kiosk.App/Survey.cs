@@ -22,8 +22,6 @@ class Survey {
         return mockQuestions;
     }
 
-
-
     private Dictionary<String, List<String>> MockAnswers() {
         Dictionary<String, List<String>> mockAnswers = new Dictionary<String, List<String>>();
 
@@ -34,6 +32,10 @@ class Survey {
 
         return mockAnswers;
     }
+
+
+    
+
 
     public void Run() {
         Console.WriteLine("Survey");
