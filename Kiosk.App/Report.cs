@@ -7,7 +7,8 @@ using ChartDirector;
 
 namespace CSharpChartExplorer
 {
-    public class simplepie{
+    public class simplepie : DemoModule
+    {
         //Name of demo module
         public string getName() { return "Simple Pie Chart"; }
 
