@@ -9,7 +9,7 @@ class Survey {
 
     private Read reader;
     private Results results;
-    private Dictionary<String, List<String>> questions;
+    private Dictionary<String, string[]> questions;
     private Dictionary<String, List<String>> answers;
     private int n;
 
@@ -40,22 +40,31 @@ class Survey {
         n = Int32.Parse(Console.ReadLine());
 
         answers = new Dictionary<string, List<string>>();
-        foreach(var question in questions) {
-            answers.Add(question.Key, new List<String>());
+        foreach(var question in questions.Keys) {
+            answers.Add(question, new List<String>());
         }
 
         for (int i = 0; i < n; i ++) {
+            Console.WriteLine("Participant " + (i + 1));
 
+            foreach(var question in questions) {
+                Console.WriteLine(question.Key + " (" + string.Join(" ", question.Value) + ")");
+                string temp = Console.ReadLine();
+                answers[question.Key].Add(temp);
+            }
         }
-    }
 
+    }
 
     public void Run() {
         Console.WriteLine("Survey");
+        reader = new Read();
+        questions = reader.ReadQuestionsFile();
+        ExecuteSurvey();
+        sendSurveyResults();
     }
 
     public void sendSurveyResults() {
-        answers = MockAnswers();
-        results.Run(answers);
+        results.proccessResults(answers);
     }
 }
