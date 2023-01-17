@@ -40,13 +40,20 @@ class Survey {
         n = Int32.Parse(Console.ReadLine());
 
         answers = new Dictionary<string, List<string>>();
-        foreach(var question in questions) {
-            answers.Add(question.Key, new List<String>());
+        foreach(var question in questions.Keys) {
+            answers.Add(question, new List<String>());
         }
 
         for (int i = 0; i < n; i ++) {
+            Console.WriteLine("Participant " + (i + 1));
 
+            foreach(var question in questions) {
+                Console.WriteLine(question.Key + " (" + question.Value + ")");
+                string temp = Console.ReadLine();
+                answers[question.Key].Add(temp);
+            }
         }
+        
     }
 
 
