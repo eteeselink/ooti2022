@@ -9,6 +9,7 @@ using System.Collections.Generic;
 namespace Kiosk.App;
 
 class Results {
+
     public void Run() {
         Console.WriteLine("TextResultReport");
     }
@@ -35,5 +36,8 @@ class Results {
         }
 
         return processedResults;
+    }
+    public void Run(Dictionary<String, List<String>> answers) {
+        Console.WriteLine("Results");
     }
 }

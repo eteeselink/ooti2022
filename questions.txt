@@ -1,1 +1,2 @@
-hello!
+Is the sun hot? Yes, No
+What color is grass? Blue, Red, Green
