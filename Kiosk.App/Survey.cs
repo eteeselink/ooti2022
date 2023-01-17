@@ -48,14 +48,13 @@ class Survey {
             Console.WriteLine("Participant " + (i + 1));
 
             foreach(var question in questions) {
-                Console.WriteLine(question.Key + " (" + question.Value + ")");
+                Console.WriteLine(question.Key + " (" + string.Join(" ", question.Value) + ")");
                 string temp = Console.ReadLine();
                 answers[question.Key].Add(temp);
             }
         }
 
     }
-
 
     public void Run() {
         Console.WriteLine("Survey");
@@ -66,6 +65,6 @@ class Survey {
     }
 
     public void sendSurveyResults() {
-        results.Run(answers);
+        results.proccessResults(answers);
     }
 }
