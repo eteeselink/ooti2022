@@ -25,9 +25,13 @@ class Results {
         var processedResults = new Dictionary<string, KeyValuePair<string, int>>();
 
 
-        foreach (var result in fakeResults)
+        foreach (var question in fakeResults.Keys)
         {
-            Console.WriteLine("Daniel and hassan are here!");
+            var valuecountedResults = new KeyValuePair<String, int>();
+            var answers = fakeResults[question];
+            for (var answer in answers) {
+
+            }
         }
 
         return processedResults;
