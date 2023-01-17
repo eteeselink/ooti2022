@@ -16,6 +16,12 @@ class Read {
     public string ReadQuestionsFile() {
         // we run in <root>/Kiosk.App/bin/Debug/net6.0, so gotta go up 4 levels
         var rootDir = AppContext.BaseDirectory + "/../../../../";
-        return File.ReadAllText(rootDir + "questions.txt");
+
+        // Read the questions file line by line
+        foreach (string line in System.IO.File.ReadLines(rootDir + "questions.txt")) {
+            Console.WriteLine(line);
+        }
+        
+        return "hi xd";
     }
 }
