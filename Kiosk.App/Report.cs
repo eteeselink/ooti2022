@@ -3,18 +3,33 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using ChartDirector;
 
-namespace Kiosk.App;
-public class Report {
-    public void Run() {
-        Console.WriteLine("Visual Report");
-        Console.WriteLine("============");
-        
-        int[] data = {25, 18};
-        string[] labels = {"Y", "N"};
-    }
-    public void visualizeresults(Dictionary<String, Dictionary<String, int >> results){
+namespace CSharpChartExplorer
+{
+    public class simplepie{
+        //Name of demo module
+        public string getName() { return "Simple Pie Chart"; }
 
-        Console.WriteLine("the connection is working");
-    }
-}
+        //Number of charts produced in this demo module
+        public int getNoOfCharts() { return 1; }
+
+        //Main code for creating chart.
+        //Note: the argument chartIndex is unused because this demo only has 1 chart.
+        public void createChart(WinChartDirection viewer, int chartIndex)
+        {
+            // The data for the pie chart
+            double[] data = {25, 18, 15, 12, 8, 30, 35};
+
+            // The labels for the pie chart
+            string[] labels = {"Labor", "Licenses", "Taxes", "Legal", "Insurance", "Facilities", "Production"};
+
+            // Create a PieChart object of size 360 x 300 pixels
+            PieChart c = new PieChart(360, 300);
+
+            // Set the center of the pie at (180, 140) and the radius to 100 pixels
+            c.setPieSize(180, 140, 100);
+
+            // Set the pie data and the pie labels
+            c.setData(data, labels);
+
