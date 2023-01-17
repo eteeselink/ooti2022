@@ -25,7 +25,6 @@ public class ReadTest
     {
         var readStep = new Read();
         var result = readStep.ReadQuestionsFile();
-        Console.WriteLine(result);
         Assert.NotEmpty(result);
     }
 }
