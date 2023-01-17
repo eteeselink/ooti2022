@@ -6,15 +6,15 @@ using System.Linq;
 
 namespace Kiosk.App;
 public class Report {
-    
-    Results visualizeresult;
-    visualizeresult.proccessResults(Dictionary<String, Dictionary<String, int >>);
-
     public void Run() {
         Console.WriteLine("Visual Report");
         Console.WriteLine("============");
         
         int[] data = {25, 18};
         string[] labels = {"Y", "N"};
+    }
+    public void visualizeresults(Dictionary<String, Dictionary<String, int >> results){
+
+        Console.WriteLine("the connection is working");
     }
 }
