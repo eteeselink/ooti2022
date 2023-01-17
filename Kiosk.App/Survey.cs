@@ -65,6 +65,7 @@ class Survey {
     }
 
     public void sendSurveyResults() {
+        results = new Results();
         results.proccessResults(answers);
     }
 }
