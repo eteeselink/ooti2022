@@ -22,11 +22,14 @@ class Survey {
         return mockQuestions;
     }
 
+
+
     private Dictionary<String, List<String>> MockAnswers() {
         Dictionary<String, List<String>> mockAnswers = new Dictionary<String, List<String>>();
 
         string[] answers = {"Y", "N", "Y", "Y"};
         List<string> ansRange = new List<string>(answers);
+
         mockAnswers.Add("Are cats better than dogs?", ansRange);
 
         return mockAnswers;
@@ -34,5 +37,10 @@ class Survey {
 
     public void Run() {
         Console.WriteLine("Survey");
+    }
+
+    public void sendSurveyResults() {
+        answers = MockAnswers();
+        results.Run(answers);
     }
 }

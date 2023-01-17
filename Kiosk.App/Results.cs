@@ -6,7 +6,7 @@ using System.Linq;
 namespace Kiosk.App;
 
 class Results {
-    public void Run() {
+    public void Run(Dictionary<String, List<String>> answers) {
         Console.WriteLine("Results");
     }
 }
