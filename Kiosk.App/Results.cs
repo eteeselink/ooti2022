@@ -14,7 +14,7 @@ class Results {
         Console.WriteLine("TextResultReport");
     }
 
-    public Dictionary<string, KeyValuePair<string, int>> proccessResults(Dictionary<string, List<String>> results) {
+    public void proccessResults(Dictionary<string, List<String>> results) {
         var answers1 = new List<String>(){"T", "F", "T", "T", "T", "F"};
         var answers2 = new List<String>(){"Light Blue", "Green", "Red", "Brown", "Red"};
         var answers3 = new List<String>(){"True", "True", "False"};
@@ -23,19 +23,24 @@ class Results {
         fakeResults.Add("Q2", answers2);
         fakeResults.Add("Q3", answers3);
 
-        var processedResults = new Dictionary<string, KeyValuePair<string, int>>();
+        var processedResults = new Dictionary<string, Dictionary<string, int>>();
 
 
         foreach (var question in fakeResults.Keys)
         {
-            var valuecountedResults = new KeyValuePair<String, int>();
+            var countedResults = new Dictionary<string, int>();
             var answers = fakeResults[question];
-            for (var answer in answers) {
-
+            foreach (var answer in answers) {
+                if (countedResults.ContainsKey(answer)) {
+                    countedResults[answer]++;
+                } else {
+                    countedResults.Add(answer, 1);
+                }    
             }
+            processedResults.Add(question, countedResults);
         }
 
-        return processedResults;
+       new Report().visualizeresults(processedResults);
     }
     public void Run(Dictionary<String, List<String>> answers) {
         Console.WriteLine("Results");
