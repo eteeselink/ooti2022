@@ -1,3 +1,5 @@
+using System;
+using System.IO;
 using Xunit;
 using Kiosk.App;
 
@@ -22,6 +24,8 @@ public class ReadTest
     public void CanReadFile()
     {
         var readStep = new Read();
-        Assert.NotEmpty(readStep.ReadQuestionsFile());
+        var result = readStep.ReadQuestionsFile();
+        Console.WriteLine(result);
+        Assert.NotEmpty(result);
     }
 }
