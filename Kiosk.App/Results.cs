@@ -15,21 +15,21 @@ class Results {
     }
 
     public void proccessResults(Dictionary<string, List<String>> results) {
-        var answers1 = new List<String>(){"T", "F", "T", "T", "T", "F"};
-        var answers2 = new List<String>(){"Light Blue", "Green", "Red", "Brown", "Red"};
-        var answers3 = new List<String>(){"True", "True", "False"};
-        var fakeResults = new Dictionary<string, List<String>>();
-        fakeResults.Add("Q1", answers1);
-        fakeResults.Add("Q2", answers2);
-        fakeResults.Add("Q3", answers3);
+        // var answers1 = new List<String>(){"T", "F", "T", "T", "T", "F"};
+        // var answers2 = new List<String>(){"Light Blue", "Green", "Red", "Brown", "Red"};
+        // var answers3 = new List<String>(){"True", "True", "False"};
+        // var fakeResults = new Dictionary<string, List<String>>();
+        // fakeResults.Add("Q1", answers1);
+        // fakeResults.Add("Q2", answers2);
+        // fakeResults.Add("Q3", answers3);
 
         var processedResults = new Dictionary<string, Dictionary<string, int>>();
 
 
-        foreach (var question in fakeResults.Keys)
+        foreach (var question in results.Keys)
         {
             var countedResults = new Dictionary<string, int>();
-            var answers = fakeResults[question];
+            var answers = results[question];
             foreach (var answer in answers) {
                 if (countedResults.ContainsKey(answer)) {
                     countedResults[answer]++;
